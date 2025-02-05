@@ -1,13 +1,14 @@
 import abc
 from dataclasses import dataclass
-from enum import Enum
 from typing import Optional, Dict
 
 from dbt.adapters.contracts.relation import RelationConfig
 from dbt.adapters.relation_configs.formats import TableFormat
 from dbt.adapters.protocol import CatalogIntegrationProtocol
+from dbt_common.dataclass_schema import StrEnum
 
-class CatalogIntegrationType(Enum):
+
+class CatalogIntegrationType(StrEnum):
     managed = "managed"
     iceberg_rest = "iceberg_rest"
     glue = "glue"
